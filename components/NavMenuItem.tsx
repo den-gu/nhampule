@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import Arrow from "../public/arrow.svg"
-import { arrowMotion, dividerMotion, itemContentMotion, itemCoverMotion } from '@/utils/animations';
+import { arrowMotion, dividerMotion, itemContentMotion, itemCoverMotion } from '@/utils/animation';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 

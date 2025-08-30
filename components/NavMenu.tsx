@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { easings } from '@/utils/animations'
+import { easings } from '@/utils/animation'
 import NavMenuItem from './NavMenuItem'
-import { useTranslations } from 'next-intl';
+// import { useTranslations } from 'next-intl';
 
 interface NavMenuProps {
     open: boolean;
@@ -11,27 +11,49 @@ interface NavMenuProps {
 
 const NavMenu: React.FC<NavMenuProps> = ({open, setOpen}) => {
 
-    const t = useTranslations("Navbar")
+    // const t = useTranslations("Navbar")
 
-    const navItems = [
-        {
-            title: t("link1"),
-            url: "#projects"
-        },
-        {
-            title: t("link2"),
-            url: "#about"
-        },
-        {
-            title: t("link3"),
-            url: "#news"
-        },
-        {
-            title: t("link4"),
-            url: "#contact"
-        }
-    ];
+    // const navItems = [
+    //     {
+    //         title: t("link1"),
+    //         url: "#projects"
+    //     },
+    //     {
+    //         title: t("link2"),
+    //         url: "#about"
+    //     },
+    //     {
+    //         title: t("link3"),
+    //         url: "#news"
+    //     },
+    //     {
+    //         title: t("link4"),
+    //         url: "#contact"
+    //     }
+    // ];
 
+    const links = [
+    {
+        label: 'Início',
+        path: '/advogados'
+    },
+    {
+        label: 'Para Escritórios',
+        path: '/escritorios'
+    },
+    {
+        label: 'Para Empresas',
+        path: '/empresas'
+    },
+    {
+        label: 'Sobre Nós',
+        path: '/sobre-nos'
+    },
+    {
+        label: 'Artigos e Notícias',
+        path: '/insights'
+    }
+];
     // const [open, setOpen] = useState(true);
 
   return (
@@ -49,8 +71,8 @@ const NavMenu: React.FC<NavMenuProps> = ({open, setOpen}) => {
     }}
     >
         <ul>            
-            {navItems.map((item, idx) => (
-                <NavMenuItem key={idx} index={idx + 1} title={item.title} url={item.url} open={open} setOpen={setOpen} />
+            {links.map((item, idx) => (
+                <NavMenuItem key={idx} index={idx + 1} title={item.label} url={item.path} open={open} setOpen={setOpen} />
             ))}
         </ul>
     </motion.nav>
